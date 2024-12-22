@@ -9,4 +9,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Start Keycloak with dynamic port binding
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--http-port=8080", "--optimized"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--http-port=8080", "--optimized", "--profile=dev"]
