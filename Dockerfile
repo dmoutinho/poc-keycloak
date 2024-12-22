@@ -1,5 +1,12 @@
 FROM quay.io/keycloak/keycloak:latest
+
+# Set default environment variables for Keycloak
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
-EXPOSE 8080
+ENV PORT=8080
+
+# Expose the port dynamically
+EXPOSE ${PORT}
+
+# Start Keycloak with dynamic port binding
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--http-port=${PORT}"]
