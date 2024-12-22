@@ -6,7 +6,7 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 ENV PORT=8080
 
 # Expose the port dynamically
-EXPOSE ${PORT}
+EXPOSE $PORT
 
 # Start Keycloak with dynamic port binding
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--http-port=$PORT", "--optimized"]
